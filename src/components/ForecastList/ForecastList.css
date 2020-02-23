@@ -1,0 +1,48 @@
+.forecastContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  color: #5c5c5c;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.previewList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto; 
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.previewList li {
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 0 30px;
+  padding: 20px;
+}
+
+.previewList li:hover {
+  background: #F5F5F5;
+}
+
+img {
+  width: 160px;
+}
+
+p {
+  margin: 0;
+}
+
+.forecastDetails li {
+  margin: 40px 0;
+  font-size: 25px;
+}

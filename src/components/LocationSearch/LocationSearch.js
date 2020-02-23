@@ -1,19 +1,28 @@
 import React, { useRef } from 'react';
 import './LocationSearch.css';
 
-const LocationSearch = (props) => {
+const LocationSearch = ({ onSubmit }) => {
   const inputEl = useRef(null);
 
-  const onTextSubmit = () => {
-    // if (!inputEl || !inputEl.current) return;
+  const onTextSubmit = event => {
+    if (!inputEl || !inputEl.current) return;
 
-    // event.preventDefault();
-    // const inputText = inputEl.current.value;
+    event.preventDefault();
+    const searchTerm = inputEl.current.value;
+
+    // onSubmit(searchTerm);
+
+    onSubmit(searchTerm);
+
+    // Clear the input field manually since default was prevented.
+    if (searchTerm.length > 0) {
+      inputEl.current.value = '';
+    }
   };
 
   return (
     <form className="formContainer" onSubmit={onTextSubmit}>
-      <input className="textInput" ref={inputEl} type="text"></input>
+      <input className="textInput" ref={inputEl} type="text" placeholder="London"></input>
       <input className="submitButton" type="submit" value="Get Weather" />
     </form>
   );

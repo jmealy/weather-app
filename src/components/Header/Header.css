@@ -1,8 +1,21 @@
-.Header {
+.header {
+  flex-grow: 1;
   background-image: url('../../assets/pattern.svg');
   display: inline-flex;
 }
 
 .search {
+  margin: auto;
+}
+
+.search h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: lighter;
+  margin: 30px;
+}
+
+.searchForm {
+  width: 300px;
   margin: auto;
 }
