@@ -5,7 +5,10 @@ import './Header.css';
 const Header = () => {
   return (
     <div className="Header">
-      <LocationSearch></LocationSearch>
+      <div className="search">
+        <LocationSearch />
+      </div>
+
     </div>
   );
 }
