@@ -18,7 +18,6 @@ describe('<LocationSearch />', () => {
     const component = mount(<LocationSearch onSubmit={onSubmitMock} />);
 
     component.find('.textInput').instance().value = "London";
-
     const form = component.find('form');
     form.simulate('submit');
 

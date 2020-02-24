@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import config from '../../config';
 import './ForecastList.css';
 
 const ForecastList = ({ forecastData, city }) => {
@@ -19,7 +20,7 @@ const ForecastList = ({ forecastData, city }) => {
     const date = new Date(forecast.valid_date);
     const formattedDate = date.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
 
-    const iconUrl = `https://www.weatherbit.io/static/img/icons/${forecast.weather.icon}.png`;
+    const iconUrl = `${config.weatherApiIconBaseUrl}${forecast.weather.icon}.png`;
     return (
       <>
         <img src={iconUrl} alt="weather icon" />

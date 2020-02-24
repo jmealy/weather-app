@@ -1,11 +1,11 @@
-import config from './config';
+import config from '../config';
 
 const getFiveDayForecast = async city => {
-  const parameters = `?city=${city}&key=${config.apiKey}`;
+  const parameters = `?city=${city}&key=${config.weatherApiKey}`;
 
   let response;
   try {
-    response = await fetch(config.baseUrl + parameters);
+    response = await fetch(config.weatherApiBaseUrl + parameters);
   } catch (error) {
     throw new Error('Unable to fetch weather forecast.');
   }
