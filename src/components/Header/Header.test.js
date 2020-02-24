@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './App';
+import Header from './Header';
 
 test('renders learn react link', () => {
-  const tree = renderer.create(<App />);
+  const onLocationSubmit = jest.fn();
+  const tree = renderer.create(<Header onLocationSubmit={onLocationSubmit} />);
   expect(tree).toMatchSnapshot();
 });

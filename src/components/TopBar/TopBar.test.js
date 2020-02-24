@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './App';
+import TopBar from './TopBar';
 
 test('renders learn react link', () => {
-  const tree = renderer.create(<App />);
+  const tree = renderer.create(<TopBar onLocationSubmit={jest.fn()} />);
   expect(tree).toMatchSnapshot();
 });

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div
+  className="forecastContainer"
+>
+  <h1>
+    London
+  </h1>
+  <ul
+    className="previewList"
+  >
+    <li
+      onClick={[Function]}
+    />
+    <li
+      onClick={[Function]}
+    />
+    <li
+      onClick={[Function]}
+    />
+    <li
+      onClick={[Function]}
+    />
+    <li
+      onClick={[Function]}
+    />
+  </ul>
+</div>
+`;

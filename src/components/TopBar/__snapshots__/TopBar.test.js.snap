@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div
+  className="topBar"
+>
+  <div
+    className="appTitle"
+  >
+    Weather App
+  </div>
+  <div
+    className="topBarSearch"
+  >
+    <form
+      className="formContainer"
+      onSubmit={[Function]}
+    >
+      <input
+        className="textInput"
+        placeholder="London"
+        type="text"
+      />
+      <input
+        className="submitButton"
+        type="submit"
+        value="Get Weather"
+      />
+    </form>
+  </div>
+</div>
+`;

@@ -11,7 +11,6 @@ const ForecastList = ({ forecastData, city }) => {
   const showDetailView = forecast => {
     setDetailView(true);
     setSelectedForecast(forecast);
-    console.log('whu');
   }
 
   const renderForecastPreview = forecast => {
@@ -62,9 +61,7 @@ const ForecastList = ({ forecastData, city }) => {
             </ul>
           </>
       }
-
     </div>
-    // </div>
   );
 }
 

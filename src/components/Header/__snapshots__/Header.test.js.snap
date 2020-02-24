@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="search"
+  >
+    <h1>
+      Enter a City
+    </h1>
+    <div
+      className="searchForm"
+    >
+      <form
+        className="formContainer"
+        onSubmit={[Function]}
+      >
+        <input
+          className="textInput"
+          placeholder="London"
+          type="text"
+        />
+        <input
+          className="submitButton"
+          type="submit"
+          value="Get Weather"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;
