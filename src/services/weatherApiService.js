@@ -1,9 +1,6 @@
-// import config from '../config';
-
 import config from './config';
 
 const getFiveDayForecast = async city => {
-
   const parameters = `?city=${city}&key=${config.apiKey}`;
 
   let response;
