@@ -7,7 +7,7 @@ const ForecastList = ({ forecastData, city }) => {
   const [detailView, setDetailView] = useState(false);
   const [selectedForecast, setSelectedForecast] = useState(0);
 
-  useEffect(() => setDetailView(false), forecastData);
+  useEffect(() => setDetailView(false), [forecastData]);
 
   const showDetailView = forecast => {
     setDetailView(true);

@@ -40,12 +40,14 @@ describe('getFiveDayForecast', () => {
   test('throws error for invalid city name', async () => {
     responseBody.status = 204;
     fetch = jest.fn(() => Promise.resolve(responseBody));
-    await expect(getFiveDayForecast('london')).rejects.toThrow('Invalid City Name.');
+    await expect(getFiveDayForecast('london')).rejects
+      .toThrow('No weather data found. Please enter a valid city name.');
   });
 
   test('resolves with the 5 day forecast', async () => {
     responseBody.status = 400;
     fetch = jest.fn(() => Promise.resolve(responseBody));
-    await expect(getFiveDayForecast('london')).rejects.toThrow('Unable to fetch weather forecast.');
+    await expect(getFiveDayForecast('london')).rejects
+      .toThrow('Unable to fetch weather forecast. Please try again.');
   });
 });
