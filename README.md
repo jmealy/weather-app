@@ -2,6 +2,8 @@ This app uses weatherbit.io to get a five day weather forecast for a given city.
 
 ### Setup
 
+Clone the repo and run `yarn` to install dependencies.
+
 To run the app you will need an api key which you can get here: https://www.weatherbit.io/
 
 After cloning the repo, you can add the key to the [config file](src/config.js)
