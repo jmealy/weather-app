@@ -10,8 +10,6 @@ const LocationSearch = ({ onSubmit }) => {
     event.preventDefault();
     const searchTerm = inputEl.current.value;
 
-    // onSubmit(searchTerm);
-
     onSubmit(searchTerm);
 
     // Clear the input field manually since default was prevented.

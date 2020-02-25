@@ -19,9 +19,9 @@ const getFiveDayForecast = async city => {
     return Promise.resolve(fiveDayForecast);
   } else if (response.status === 204) {
     // When an invalid city name is sent, a 204 is returned from the API. 
-    return Promise.reject(new Error('Invalid City Name.'));
+    return Promise.reject(new Error('No weather data found. Please enter a valid city name.'));
   } else {
-    return Promise.reject(new Error('Unable to fetch weather forecast.'));
+    return Promise.reject(new Error('Unable to fetch weather forecast. Please try again.'));
   }
 };
 

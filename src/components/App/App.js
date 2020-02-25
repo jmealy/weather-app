@@ -7,6 +7,7 @@ import './App.css';
 
 function App() {
   const [forecast, setForecast] = useState([]);
+  const [error, setError] = useState({});
 
   const displayForecast = async city => {
     let fiveDayForecast;
@@ -14,21 +15,32 @@ function App() {
       fiveDayForecast = await getFiveDayForecast(city);
       setForecast(fiveDayForecast);
     } catch (error) {
-      console.log(error);
+      setError(error);
     }
   }
+
+  const renderAppContent = () => {
+    if (error && error.message) {
+      return (<h3>{error.message}</h3>);
+    }
+    if (forecast.data && forecast.data.length) {
+      return (
+        <ForecastList
+          forecastData={forecast.data}
+          city={forecast.cityName}
+        />
+      );
+    }
+    return (
+      <Header onLocationSubmit={displayForecast} />
+    )
+  }
+
 
   return (
     <div className="App">
       <TopBar onLocationSubmit={displayForecast} />
-      {
-        forecast.data && forecast.data.length > 0 ?
-          <ForecastList
-            forecastData={forecast.data}
-            city={forecast.cityName}
-          /> :
-          <Header onLocationSubmit={displayForecast} />
-      }
+      { renderAppContent() }
     </div>
   );
 }
