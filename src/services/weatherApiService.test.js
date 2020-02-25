@@ -14,16 +14,14 @@ const forecast = {
   ]
 }
 
-const responseBody = {
+let responseBody = {
   json: jest.fn(() => forecast),
   status: 200
 }
 
 describe('getFiveDayForecast', () => {
   test('resolves with the 5 day forecast', async () => {
-
     fetch = jest.fn(() => Promise.resolve(responseBody));
-
     const expectedResult = {
       cityName: 'London',
       data: [
@@ -34,9 +32,20 @@ describe('getFiveDayForecast', () => {
         { valid_date: '27-04-2020', min_temp: 4 },
       ]
     }
-
     const result = await getFiveDayForecast('london');
 
     expect(result).toStrictEqual(expectedResult);
+  });
+
+  test('throws error for invalid city name', async () => {
+    responseBody.status = 204;
+    fetch = jest.fn(() => Promise.resolve(responseBody));
+    await expect(getFiveDayForecast('london')).rejects.toThrow('Invalid City Name.');
+  });
+
+  test('resolves with the 5 day forecast', async () => {
+    responseBody.status = 400;
+    fetch = jest.fn(() => Promise.resolve(responseBody));
+    await expect(getFiveDayForecast('london')).rejects.toThrow('Unable to fetch weather forecast.');
   });
 });
